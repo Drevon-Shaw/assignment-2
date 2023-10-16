@@ -9,4 +9,4 @@ class product:
         self.estimated_units_manufactured = estimated_units_manufactured
         self.monthly_stock = [stock_level]
         self.monthly_profit = []
-        
+
