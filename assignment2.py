@@ -1,5 +1,6 @@
 
 
+import random
 
 class Product:
     def __init__(self, code, name, sale_price, manufacture_cost, stock_level, estimated_units_manufactured):
@@ -11,4 +12,16 @@ class Product:
         self.estimated_units_manufactured = estimated_units_manufactured
         self.monthly_stock = [stock_level]
         self.monthly_profit = []
+
+# Create a simiulation for the monthly sales 
+    def simulate_monthly_sales(self, months):
+        count = 1  # Initialize a counter
+        for _ in range(months):
+            units_manufactured = self.estimated_units_manufactured
+            units_sold = random.randint(units_manufactured - 10, units_manufactured + 10)
+            self.stock_level += units_manufactured - units_sold
+            self.monthly_stock.append(self.stock_level)
+            profit_or_loss = (units_sold * self.sale_price) - (units_manufactured * self.manufacture_cost)
+            self.monthly_profit.append(profit_or_loss)
+            count += 1  
 
