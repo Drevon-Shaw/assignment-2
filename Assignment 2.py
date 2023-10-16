@@ -1,5 +1,7 @@
 # 
 
+import random
+
 class product:
     def __init__(self, code, name, sale_price, manufacture_cost, stock_level, estimated_units_manufactured)
         self.code = code
@@ -19,6 +21,8 @@ class product:
             self.monthly_stock.append(self.stock_level)
             profit_or_loss = (units_sold * self.sale_price) - (units_manufactured * self.manufacture_cost)
             self.monthly_profit.append(profit_or_loss) 
+
+
 
 
 
