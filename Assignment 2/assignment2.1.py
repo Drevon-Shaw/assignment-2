@@ -22,4 +22,14 @@ class Product:
             profit_or_loss = (units_sold * self.sale_price) - (units_manufactured * self.manufacture_cost)
             self.monthly_profit.append(profit_or_loss)
             month += 1
-    
+
+
+    def generate_stock_statement(self):
+        print("Product Code: " + str(self.code))
+        print("Product Name: " + self.name)
+        print("Sale Price: $" + str(self.sale_price))
+        print("Manufacture Cost: $" + str(self.manufacture_cost))
+        print("Initial Stock Level: " + str(self.monthly_stock[0]) + " units")
+        print("Predicted Monthly Stock:")
+
+        
