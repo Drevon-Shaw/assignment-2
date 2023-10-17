@@ -12,3 +12,14 @@ class Product:
         self.monthly_stock = [stock_level]
         self.monthly_profit = []
 
+    def simulate_monthly_sales(self, months):
+        month = 1
+        units_manufactured = self.estimated_units_manufactured
+        while month <= months:
+            units_sold = random.randint(units_manufactured - 10, units_manufactured + 10)
+            self.stock_level += units_manufactured - units_sold
+            self.monthly_stock.append(self.stock_level)
+            profit_or_loss = (units_sold * self.sale_price) - (units_manufactured * self.manufacture_cost)
+            self.monthly_profit.append(profit_or_loss)
+            month += 1
+    
