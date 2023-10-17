@@ -32,4 +32,10 @@ class Product:
         print("Initial Stock Level: " + str(self.monthly_stock[0]) + " units")
         print("Predicted Monthly Stock:")
 
-        
+        month = 1
+        for stock, profit in zip(self.monthly_stock[1:], self.monthly_profit):
+            print("Month " + str(month) + ": Stock: " + str(stock) + " units, Profit/Loss: $" + "{:.2f}".format(profit))
+            month += 1
+
+    
+
