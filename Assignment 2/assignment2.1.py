@@ -37,5 +37,19 @@ class Product:
             print("Month " + str(month) + ": Stock: " + str(stock) + " units, Profit/Loss: $" + "{:.2f}".format(profit))
             month += 1
 
+    def get_positive_integer(prompt):
+         value = int(input(prompt))
+         return value
+
+    def get_positive_float(prompt):
+          value = float(input(prompt))
+          return value
     
+
+    def entry_point():
+        
+        
+    
+    
+
 
