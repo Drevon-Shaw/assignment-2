@@ -47,7 +47,24 @@ class Product:
     
 
     def entry_point():
-        
+
+        code = get_positive_integer("Enter the product code (between 100 and 1000): ")
+        name = input("Product Name (e.g., Laser Printer): ")
+        sale_price = get_positive_float("Product Sale Price (greater than zero): $")
+        manufacture_cost = get_positive_float("Product Manufacture Cost (greater than zero): $")
+        stock_level = get_positive_integer("Initial Stock Level (greater than 0): ")
+        estimated_units_manufactured = get_positive_integer("Estimated Monthly Units Manufactured (0 or greater): ")
+        months = 12
+
+        product = Product(code, name, sale_price, manufacture_cost, stock_level, estimated_units_manufactured)
+        product.simulate_monthly_sales(months)
+        product.generate_stock_statement()
+
+        total_units_sold = sum(product.monthly_profit)
+        total_units_manufactured = sum(product.estimated_units_manufactured for _ in range(months))
+        net_profit = total_units_sold * sale_price - total_units_manufactured * manufacture_cost 
+
+    
         
     
     
